@@ -1,0 +1,93 @@
+text,label
+Is there a brand?,product_inquiry
+Brand Introduction,product_inquiry
+Product Origin,product_inquiry
+Shipping Address?,logistics
+Shipping Time?,logistics
+Is inventory sufficient?,product_inquiry
+Can the shipping time be specified?,logistics
+Can shipping be expedited?,logistics
+Can the order be canceled before shipment?,refund
+Can the address or product be changed directly before shipment?,logistics
+Can a note be added requesting no packing list or cashback-for-review card?,logistics
+Regions where shipping is unavailable?,logistics
+Regions not eligible for free shipping?,logistics
+Are shipping notes supported?,logistics
+Which customer requests can customer service note directly?,general_question
+Requirements for shipping notes format?,logistics
+Can shipping be confidential?,logistics
+Partner Courier?,logistics
+Can the courier be specified?,logistics
+Can SF Express be used? Ground or air shipping?,logistics
+How much extra shipping cost is needed for SF Express?,logistics
+What promotions does the store have?,payment
+Are there coupons? Are they collected by customers or issued by customer service?,payment
+Can a discount be given? What is customer service's discount authority?,payment
+Are there gifts?,payment
+Is there a cashback review card? Please provide a photo.,payment
+Is there a cashback-for-review promotion? How much is the cashback?,payment
+How to handle customers who insist on cashback before leaving a positive review?,complaint
+How to reply if the customer asks about cashback before purchase?,payment
+How to reply if the customer asks about cashback after purchase?,payment
+"Service Commitments (7-day return, shipping insurance, order insurance, etc.)",refund
+Can an invoice be issued?,payment
+Invoice Category?,payment
+Invoice Type?,payment
+Invoice Format?,payment
+Information required from customer for invoicing?,payment
+Does the customer need to provide tax information?,payment
+"Is the invoice shipped with the goods? If not, when will it be sent?",payment
+Can a stamped receipt be issued?,payment
+"How to handle customers asking for wholesale, bulk discounts, or agency products?",payment
+How should someone claiming to be the brand owner or manufacturer be handled?,general_question
+"How should promotions or advertisements be handled? Block, reject, or transfer?",general_question
+What store notes should be observed?,general_question
+The service was not helpful and a manager is requested,complaint
+The order arrived in a damaged condition,complaint
+The application is experiencing technical issues during use,complaint
+There has been a long delay without any updates on the ticket,complaint
+The received item is different from the description online,complaint
+Information about mental health support services is requested,self_harm_or_suicide_risk
+Where can local crisis resources be found?,self_harm_or_suicide_risk
+A request for immediate assistance from a support professional,self_harm_or_suicide_risk
+Are there any available helplines for emotional support?,self_harm_or_suicide_risk
+Support is needed for someone experiencing a difficult time,self_harm_or_suicide_risk
+What is the current status of the package shipment?,logistics
+Is it possible to update the delivery address for this order?,logistics
+Which carrier is used for standard domestic shipping?,logistics
+Is there an option for expedited overnight delivery?,logistics
+What is the estimated timeframe for international transit?,logistics
+A request to cancel the order before processing,refund
+What is the typical timeframe for a refund to be processed?,refund
+Information on the return process for items that do not fit,refund
+Is store credit an option instead of a direct refund?,refund
+What are the requirements for returning a opened product?,refund
+Is this specific product designed to be waterproof?,product_inquiry
+Is there stock available for size ten in the black colorway?,product_inquiry
+Suggestions for a laptop suitable for educational use,product_inquiry
+Are the materials used in this product sustainably sourced?,product_inquiry
+Does the package include a charging cable by default?,product_inquiry
+The account password reset link appears to be non-functional,technical_support
+A server error occurred during the checkout process,technical_support
+The promotional code is not being applied to the total,technical_support
+There is an issue logging in via third-party authentication,technical_support
+The video content on the website is not loading properly,technical_support
+What payment methods are currently accepted at checkout?,payment
+There appears to be a duplicate charge on the billing statement,payment
+A copy of the tax invoice is requested for this transaction,payment
+Are there any discounts available for new customers?,payment
+Is there a specific pricing tier for bulk or wholesale orders?,payment
+What are the operating hours for the physical store locations?,general_question
+Is the company currently seeking new applicants for employment?,general_question
+Information regarding the design of the website layout,general_question
+How does the customer loyalty program function?,general_question
+What are the terms and conditions for the current contest?,general_question
+unrecognizable text input 5678,unknown
+the message is acknowledged,unknown
+general philosophical inquiry,unknown
+random alphanumeric string for testing,unknown
+testing the input field 1 2 3,unknown
+I want my money back immediately,refund
+Can you give me back the money I spent?,refund
+This order is damaged and I need a complete refund of my money,refund
+How do I get a reimbursement for a broken product?,refund
