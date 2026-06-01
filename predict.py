@@ -11,7 +11,7 @@ from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 # 1. Point dynamically to the unzipped local model folder path
 # './final_intent_model' looks for the folder sitting next to this predict.py file
-MODEL_PATH = os.path.join(os.path.dirname(__file__), "final_intent_model")
+MODEL_PATH = './intent_model'
 
 print("🔄 Loading fine-tuned intent model from local disk...")
 try:
