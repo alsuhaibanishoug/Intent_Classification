@@ -26,21 +26,21 @@ Can a discount be given? What is customer service's discount authority?,payment
 Are there gifts?,payment
 Is there a cashback review card? Please provide a photo.,payment
 Is there a cashback-for-review promotion? How much is the cashback?,payment
-How to handle customers who insist on cashback before leaving a positive review?,complaint
+How to handle customers who insist on cashback before leaving a positive review?,general_question
 How to reply if the customer asks about cashback before purchase?,payment
 How to reply if the customer asks about cashback after purchase?,payment
-"Service Commitments (7-day return, shipping insurance, order insurance, etc.)",refund
+Service Commitments (7-day return, shipping insurance, order insurance, etc.),general_question
 Can an invoice be issued?,payment
 Invoice Category?,payment
 Invoice Type?,payment
 Invoice Format?,payment
 Information required from customer for invoicing?,payment
 Does the customer need to provide tax information?,payment
-"Is the invoice shipped with the goods? If not, when will it be sent?",payment
+Is the invoice shipped with the goods? If not, when will it be sent?,payment
 Can a stamped receipt be issued?,payment
-"How to handle customers asking for wholesale, bulk discounts, or agency products?",payment
+How to handle customers asking for wholesale, bulk discounts, or agency products?,payment
 How should someone claiming to be the brand owner or manufacturer be handled?,general_question
-"How should promotions or advertisements be handled? Block, reject, or transfer?",general_question
+How should promotions or advertisements be handled? Block, reject, or transfer?,general_question
 What store notes should be observed?,general_question
 The service was not helpful and a manager is requested,complaint
 The order arrived in a damaged condition,complaint
