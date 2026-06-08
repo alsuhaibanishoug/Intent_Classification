@@ -61,7 +61,7 @@ def get_structured_inference(text, confidence_threshold=0.75):
     return json.dumps(response_payload, indent=4)
 """
 
-ef get_structured_inference(text, confidence_threshold=0.75):
+def get_structured_inference(text, confidence_threshold=0.75):
     # 1. Convert text input into tokens
     inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=128)
     
