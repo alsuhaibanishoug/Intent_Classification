@@ -26,7 +26,7 @@ The application keeps crashing every time I try to submit a report,complaint
 I am extremely angry about this massive delay,complaint
 Which customer requests can customer service note directly?,general_question
 How should someone claiming to be the brand owner or manufacturer be handled?,general_question
-How should promotions or advertisements be handled? Block, reject, or transfer?,general_question
+"How should promotions or advertisements be handled? Block,reject or transfer?",general_question
 What store notes should be observed?,general_question
 What are the operating hours for the physical store locations?,general_question
 Is the company currently seeking new applicants for employment?,general_question
@@ -44,6 +44,8 @@ What are the terms of service for using this platform?,general_question
 How can I submit a business partnership proposal?,general_question
 Are there any job openings available right now?,general_question
 What is the story behind the founding of this brand?,general_question
+Is there a brand?,general_question
+Brand Introduction,general_question
 Do you offer any special discounts for students or military personnel?,general_question
 Where can I read user reviews or testimonials about your brand?,general_question
 How do I sign up for your monthly newsletter?,general_question
@@ -88,9 +90,9 @@ Invoice Type?,payment
 Invoice Format?,payment
 Information required from customer for invoicing?,payment
 Does the customer need to provide tax information?,payment
-Is the invoice shipped with the goods? If not, when will it be sent?,payment
+Is the invoice shipped with the goods? If not when will it be sent?,payment
 Can a stamped receipt be issued?,payment
-How to handle customers asking for wholesale, bulk discounts, or agency products?,payment
+How to handle customers asking for wholesale bulk discounts or agency products?,payment
 What payment methods are currently accepted at checkout?,payment
 There appears to be a duplicate charge on the billing statement,payment
 A copy of the tax invoice is requested for this transaction,payment
@@ -99,8 +101,6 @@ Is there a specific pricing tier for bulk or wholesale orders?,payment
 My credit card keeps getting declined at checkout,payment
 Do you accept bank transfers or digital wallets for payment?,payment
 Why is there an unexpected extra fee on my receipt?,payment
-Is there a brand?,product_inquiry
-Brand Introduction,product_inquiry
 Product Origin,product_inquiry
 Is inventory sufficient?,product_inquiry
 Is this specific product designed to be waterproof?,product_inquiry
@@ -125,7 +125,7 @@ What voltage does this electrical appliance operate on?,product_inquiry
 Is this fabric prone to shrinking after a dryer cycle?,product_inquiry
 Can you confirm if this item contains any common allergens?,product_inquiry
 Can the order be canceled before shipment?,refund
-Service Commitments (7-day return, shipping insurance, order insurance, etc.),refund
+"Service Commitments (7-day return, shipping insurance, order insurance etc.)",refund
 A request to cancel the order before processing,refund
 What is the typical timeframe for a refund to be processed?,refund
 Information on the return process for items that do not fit.,refund
