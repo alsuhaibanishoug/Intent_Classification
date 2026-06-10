@@ -1001,6 +1001,10 @@ the service was not helpful whenever a manager is requested,complaint
 there has been a long delay regarding any updates on the ticket,complaint
 Which customer requests can customer service note directly?,general_question
 How should someone claiming to be the brand owner or manufacturer be handled?,general_question
+is it a brand?,general_question
+is this a brand?,general_question
+is that a brand?,general_question
+is she a brand?,general_question
 What store notes should be observed?,general_question
 What are the operating hours for the physical store locations?,general_question
 Is the company currently seeking new applicants for employment?,general_question
@@ -1011,6 +1015,10 @@ Where can I find your official privacy policy?,general_question
 Is there a physical storefront I can visit in person?,general_question
 Who should I contact for press or media inquiries?,general_question
 How long has this brand been operating in the market?,general_question
+was there a brand?,general_question
+are there a brand?,general_question
+am there a brand?,general_question
+does there a brand?,general_question
 Can you tell me more about your company's sustainability initiatives?,general_question
 Where are your corporate headquarters located?,general_question
 Do you have an active affiliate program for content creators?,general_question
@@ -1974,11 +1982,17 @@ where can i read user reviews or testimonials regarding your brand?,general_ques
 where can i read user reviews or testimonials concerning your brand?,general_question
 where can i read user reviews or testimonials from your brand?,general_question
 where can i read user reviews or testimonials of your brand?,general_question
+is there another brand?,general_question
+is there any brand?,general_question
+is there your brand?,general_question
+is there one brand?,general_question
 do you offer any special discounts for civilians or military personnel?,general_question
 do you offer any special discounts for civilian or military personnel?,general_question
 do you offer any special discounts for police or military personnel?,general_question
 do you offer any special discounts for officers or military personnel?,general_question
 do you offer any special discounts for military or military personnel?,general_question
+Is there a brand?,general_question
+Brand Introduction,general_question
 Shipping Address?,logistics
 Shipping Time?,logistics
 Can the shipping time be specified?,logistics
@@ -3427,8 +3441,6 @@ is there a cashback review card? i provide a photo.,payment
 is there a cashback review card? we provide a photo.,payment
 is there a cashback review card? you provide a photo.,payment
 is there a cashback review card? or provide a photo.,payment
-Is there a brand?,product_inquiry
-Brand Introduction,product_inquiry
 Product Origin,product_inquiry
 Is inventory sufficient?,product_inquiry
 Is this specific product designed to be waterproof?,product_inquiry
@@ -3452,10 +3464,6 @@ Does this product require assembly upon arrival?,product_inquiry
 What voltage does this electrical appliance operate on?,product_inquiry
 Is this fabric prone to shrinking after a dryer cycle?,product_inquiry
 Can you confirm if this item contains any common allergens?,product_inquiry
-was there a brand?,product_inquiry
-are there a brand?,product_inquiry
-am there a brand?,product_inquiry
-does there a brand?,product_inquiry
 is inventory.,product_inquiry
 is inventory ;,product_inquiry
 is inventory :,product_inquiry
@@ -3556,10 +3564,6 @@ can you confirm whether this item contains any common allergens?,product_inquiry
 can you confirm that this item contains any common allergens?,product_inquiry
 can you confirm why this item contains any common allergens?,product_inquiry
 can you confirm how this item contains any common allergens?,product_inquiry
-is it a brand?,product_inquiry
-is this a brand?,product_inquiry
-is that a brand?,product_inquiry
-is she a brand?,product_inquiry
 is it sufficient?,product_inquiry
 is this sufficient?,product_inquiry
 is prayer sufficient?,product_inquiry
@@ -3860,10 +3864,6 @@ can you confirm if this enzyme contains any common allergens?,product_inquiry
 can you confirm if this compound contains any common allergens?,product_inquiry
 can you confirm if this gene contains any common allergens?,product_inquiry
 can you confirm if this substance contains any common allergens?,product_inquiry
-is there another brand?,product_inquiry
-is there any brand?,product_inquiry
-is there your brand?,product_inquiry
-is there one brand?,product_inquiry
 is there stock available for size ten using the black colorway?,product_inquiry
 is there stock available for size ten under the black colorway?,product_inquiry
 is there stock available for size ten or the black colorway?,product_inquiry
