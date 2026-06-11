@@ -111,14 +111,14 @@ python evaluate_model.py
 
 For a thorough breakdown of our entire engineering workflow, datasets, and regularization strategies, review our dedicated project wiki entries:
 
-1.  **[Wiki Part 1: Data Preparation Stage](../../wiki/Data-Preparation-Stage)**
+1.  **[Wiki Part 1: Data Preparation Stage]([../../wiki/Data-Preparation-Stage](https://github.com/alsuhaibanishoug/Intent_Classification/wiki/Wiki-Part-1:-Data-Preparation-Stage))**
     *   Covers the initial Chinese-to-English translation loop.
     *   Documents structural category relabeling matching the client brief.
     *   Explains our zero-shot missing category synthesis and Masked Language Modeling (MLM) data augmentation rules to reach our balanced dataset layout.
-2.  **[Wiki Part 2: Model Architecture & Training Roadmap](../../wiki/Model-Architecture-&-Training-Roadmap)**
+2.  **[Wiki Part 2: Model Architecture & Training Roadmap]([../../wiki/Model-Architecture-&-Training-Roadmap](https://github.com/alsuhaibanishoug/Intent_Classification/wiki/Wiki-Part-2:-Model-Architecture-&-Fine%E2%80%90Tuning-Pipeline-Guide))**
     *   Detailing why we chose Transfer Learning over Classical ML or training Deep Learning layers from scratch.
     *   Outlines our overfitting defense safeguards: Weight Decay (`0.1`) and `EarlyStoppingCallback` circuit breakers.
     *   Provides the complete post-execution training performance logs.
-3.  **[Wiki Part 3: Local Evaluation & Latency Benchmarks](../../wiki/Local-Evaluation-&-Latency-Benchmarks)**
+3.  **[Wiki Part 3: Local Evaluation & Latency Benchmarks](https://github.com/alsuhaibanishoug/Intent_Classification/wiki/Wiki-Part-3:-Local-Evaluation-&-Latency-Benchmarks-Guide)**
     *   Documents our local CPU cache warm-up and time-delta evaluation strategy.
     *   Contains the final complete classification matrix table mapping 100% precision and recall metrics across our test environment.
