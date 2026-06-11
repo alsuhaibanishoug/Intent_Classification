@@ -54,10 +54,9 @@ The `intent_classification_datasets/` folder contains the step-by-step evolution
 
 The developmental phase of this project is separated into three clean notebooks located inside the `notebooks/` directory:
 
-1.  **`data_augmentation.ipynb`**: Handles 
-2.  **`augmented_dataset_analysis.ipynb`**: Contains our 
-3.  **`fineTuning_distillBERT.ipynb`**:
-
+1.  **`data_augmentation.ipynb`**: Hosts our automated Masked Language Modeling (MLM) data augmentation engine. It leverages a pre-trained model to safely scale each target class up toward our 1,000 balanced rows goal while protecting key intent keywords from modification.
+2.  **`augmented_dataset_analysis.ipynb`**: Handles dataset diagnostics and data health checks. It performs lowercase string cleaning, strips layout noise, scans for semantic cross-label text conflicts, maps string labels to integer tracking IDs, and generates our stratified 70/15/15 train, validation, and test splits.
+3.  **`fineTuning_distillBERT.ipynb`**: Handles the final PyTorch fine-tuning workflow loop. It sets up the gradient optimization pipeline over our clean data splits, injects weight decay regularization to stop text memorization, and manages training termination via early stopping callbacks.
 
 ---
 
