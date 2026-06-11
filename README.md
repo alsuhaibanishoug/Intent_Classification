@@ -75,7 +75,7 @@ pip install transformers torch pandas scikit-learn
 
 ### Step 2: Download & Extract the Model Files
 1. Ensure the `intent_model` directory is unzipped and placed in the root folder of this project.
-2. Confirm the directory contains `config.json`, `model.safetensors`, and `tokenizer_config.json` inside it.
+2. Confirm the directory contains `config.json`, `model.safetensors`([which lives here](https://github.com/alsuhaibanishoug/Intent_Classification/releases/tag/v1.0.1)), and `tokenizer_config.json` inside it.
 
 ### Step 3: Run the Live Interactive CLI
 To launch the interactive command-line tool where you can test your custom storefront phrases:
