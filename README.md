@@ -19,21 +19,21 @@ Our core architecture is optimized for lightweight CPU deployment on local machi
 ## 📂 Repository Structure
 
 ```text
-├── Notebooks/                      # Research and development notebooks
-│   ├── data_augmentation.ipynb         # MLM data augmentation script 
-│   ├── augmented_dataset_analysis.ipynb         # Dataset cleaning, conflict detection, and 3-way split code
-│   └── fineTuning_distillBERT.ipynb       # Fine-Tuning pipeline setup
-├── intent_model/             # Unzipped trained model binaries (config.json, weights)
-├── intent_classification_datasets/  # Full data pipeline evolution directory
-│   ├── original_dataset.csv         # Translated client data after Structural Audit & Relabeling
-│   ├── synthetic_expanded_dataset.csv # Generated text samples after Zero-Shot Missing Category Generation
-│   ├── combined_dataset.csv         # The initial merge of the past two datasets combined
-│   ├── data_new.csv                 # Cleaned dataset after Distribution Audit & Second-Pass Balancing
-│   ├── data_new_augmented_dataset.csv # Final expanded dataset after Contextual MLM Augmentation
-│   └── test_cleaned.csv                # 1,191 rows of clean holdout test dataset
-├── predict.py                      # Live interactive local inference CLI script
-├── evaluate_model.py               # Latency benchmarking & performance reporting script
-└── README.md                       # This file
+├── Notebooks/                                    # Research and development notebooks
+│   ├── data_augmentation.ipynb                   # MLM data augmentation script 
+│   ├── augmented_dataset_analysis.ipynb          # Dataset cleaning, conflict detection, and 3-way split code
+│   └── fineTuning_distillBERT.ipynb              # Fine-Tuning pipeline setup
+├── intent_model/                                 # Unzipped trained model binaries (config.json, weights)
+├── intent_classification_datasets/               # Full data pipeline evolution directory
+│   ├── original_dataset.csv                      # Translated client data after Structural Audit & Relabeling
+│   ├── synthetic_expanded_dataset.csv            # Generated text samples after Zero-Shot Missing Category Generation
+│   ├── combined_dataset.csv                      # The initial merge of the past two datasets combined
+│   ├── data_new.csv                              # Cleaned dataset after Distribution Audit & Second-Pass Balancing
+│   ├── data_new_augmented_dataset.csv            # Final expanded dataset after Contextual MLM Augmentation
+│   └── test_cleaned.csv                          # 1,191 rows of clean holdout test dataset
+├── predict.py                                    # Live interactive local inference CLI script
+├── evaluate_model.py                             # Latency benchmarking & performance reporting script
+└── README.md                                     # This file
 ```
 
 ---
@@ -52,10 +52,12 @@ The `intent_classification_datasets/` folder contains the step-by-step evolution
 
 ## 📓 Jupyter Notebooks Overview
 
-The developmental phase of this project is separated into two clean notebooks located inside the `notebooks/` directory:
+The developmental phase of this project is separated into three clean notebooks located inside the `notebooks/` directory:
 
-1.  **`data_analysis.ipynb`**: Handles early-stage dataset diagnostics. It performs lowercase string cleaning, strips layout noise, scans for semantic cross-label text conflicts, maps string labels to integer tracking IDs, and generates our stratified 70/15/15 train, validation, and test splits.
-2.  **`model_finetuning.ipynb`**: Contains our complete Masked Language Modeling (MLM) data augmentation engine that safely scales the dataset up to 1,000 balanced rows per class. It also hosts the final PyTorch fine-tuning workflow loop configured with weight decay regularization and early stopping.
+1.  **`data_augmentation.ipynb`**: Handles 
+2.  **`augmented_dataset_analysis.ipynb`**: Contains our 
+3.  **`fineTuning_distillBERT.ipynb`**:
+
 
 ---
 
@@ -72,8 +74,8 @@ pip install transformers torch pandas scikit-learn
 *(Note: Using standard DistilBERT architectures with older local environment parameters may require a `transformers==4.40.0` environment match).*
 
 ### Step 2: Download & Extract the Model Files
-1. Ensure the `final_intent_model` directory is unzipped and placed in the root folder of this project.
-2. Confirm the directory contains `config.json`, `model.safetensors` (or `pytorch_model.bin`), and `tokenizer_config.json` inside it.
+1. Ensure the `intent_model` directory is unzipped and placed in the root folder of this project.
+2. Confirm the directory contains `config.json`, `model.safetensors`, and `tokenizer_config.json` inside it.
 
 ### Step 3: Run the Live Interactive CLI
 To launch the interactive command-line tool where you can test your custom storefront phrases:
