@@ -1,40 +1,17 @@
-#!/usr/bin/env python3
-"""
-Predict CLI Script for Intent Classification Engine
-Handles standard Pickle (.pkl) and Joblib pipelines seamlessly.
-"""
-
 import os
 import sys
 import json
 import warnings
-
-# Suppress unnecessary library warnings during runtime initialization
 warnings.filterwarnings("ignore")
 
-# Define the relative path to your pickled model asset file
+# Relative path to pickled model asset file
 MODEL_PATH = 'models/logreg_pipeline.pkl'
 
 
 def load_model_pipeline(path):
-    """
-    Safely opens and deserializes the trained model pipeline file,
-    handling both Joblib and classic Pickle serialization.
-    """
     if not os.path.exists(path):
         print(f"Error: Model artifact file not found at path: '{path}'", file=sys.stderr)
         sys.exit(1)
-        
-    # Check for Git LFS placeholder contamination
-    try:
-        with open(path, "r", errors="ignore") as text_file:
-            head = text_file.read(100)
-            if "git-lfs" in head or "version https://git-lfs" in head:
-                print("\n[CRITICAL ERROR]: Your model file is a Git LFS pointer text file, not the actual model binary!", file=sys.stderr)
-                print("Please download the raw binary file directly from GitHub or run 'git lfs pull'.\n", file=sys.stderr)
-                sys.exit(1)
-    except Exception:
-        pass # Not a text file, safe to proceed with binary loading
 
     # Try loading with joblib first (Highly recommended for Scikit-Learn pipelines)
     try:
@@ -55,9 +32,6 @@ def load_model_pipeline(path):
 
 
 def generate_json_payload(pipeline, user_text, confidence_threshold=0.60):
-    """
-    Processes the raw text phrase through the ML model pipeline.
-    """
     predicted_intent = str(pipeline.predict([user_text])[0])
     
     try:
