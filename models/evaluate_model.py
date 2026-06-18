@@ -4,7 +4,6 @@ import pandas as pd
 import joblib
 from sklearn.metrics import classification_report
 
-# 1. Configuration Paths
 MODEL_PATH = 'logreg_pipeline.pkl'
 TEST_DATA_PATH = 'test_cleaned.csv'
 
@@ -17,14 +16,14 @@ except Exception as e:
     print(f"Error: {e}")
     exit(1)
 
-# 2. Processing Arrays
+# Processing Arrays
 predictions = []
 true_labels = []
 latencies = []
 
 print("\nRunning inference benchmarks...")
 
-# 3. Benchmarking Loop
+# Benchmarking Loop
 for idx, row in df_test.iterrows():
     text = str(row['text'])
     true_label = str(row['label']).strip()
@@ -39,14 +38,14 @@ for idx, row in df_test.iterrows():
     predictions.append(pred_label)
     true_labels.append(true_label)
 
-# 4. Latency Calculations
+# Latency Calculations
 avg_latency = np.mean(latencies)
 p95_latency = np.percentile(latencies, 95)
 p99_latency = np.percentile(latencies, 99)
 min_latency = np.min(latencies)
 max_latency = np.max(latencies)
 
-# 5. Print Report
+# Print Report
 print("\n==========================================================")
 print(" INFERENCE LATENCY BENCHMARK REPORT ")
 print("==========================================================")
