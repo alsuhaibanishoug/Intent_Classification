@@ -6,7 +6,6 @@ import torch.nn.functional as F
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 from sklearn.metrics import classification_report, accuracy_score
 
-# 1. Configuration Paths
 MODEL_PATH = './intent_model'
 TEST_DATA_PATH = 'intent_classification_datasets/test_cleaned.csv'
 
@@ -22,11 +21,11 @@ except Exception as e:
     print(f"❌ Initialization Error: {e}")
     exit(1)
 
-# 2. Extract Dynamic Mappings from Saved Model Config
+# Extract Dynamic Mappings from Saved Model Config
 unique_labels = sorted(list(model.config.id2label.values()))
 label2id = {label: idx for idx, label in enumerate(unique_labels)}
 
-# 3. Processing Arrays
+# Processing Arrays
 predictions = []
 true_labels = []
 latencies = []
@@ -38,7 +37,7 @@ _ = tokenizer("warmup text", return_tensors="pt")
 with torch.no_grad():
     _ = model(**{k: v for k, v in _.items() if k != "token_type_ids"})
 
-# 4. Benchmarking Loop
+# Benchmarking Loop
 for idx, row in df_test.iterrows():
     text = str(row['text'])
     true_label = str(row['label']).strip()
@@ -47,7 +46,7 @@ for idx, row in df_test.iterrows():
     start_time = time.perf_counter()
     
     inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=128)
-    inputs.pop("token_type_ids", None)  # DistilBERT crash fix
+    inputs.pop("token_type_ids", None) 
     
     with torch.no_grad():
         outputs = model(**inputs)
@@ -68,14 +67,14 @@ for idx, row in df_test.iterrows():
     predictions.append(pred_label)
     true_labels.append(true_label)
 
-# 5. Latency Calculations
+# Latency Calculations
 avg_latency = np.mean(latencies)
 p95_latency = np.percentile(latencies, 95)  # 95% of requests are faster than this
 p99_latency = np.percentile(latencies, 99)  # 99% of requests are faster than this
 min_latency = np.min(latencies)
 max_latency = np.max(latencies)
 
-# 6. Print Performance Statistics Report
+# Performance Statistics Report
 print("\n==========================================================")
 # Metrics summary
 print("             INFERENCE LATENCY BENCHMARK REPORT           ")
