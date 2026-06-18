@@ -4,7 +4,6 @@ import json
 import warnings
 warnings.filterwarnings("ignore")
 
-# Relative path to pickled model asset file
 MODEL_PATH = 'models/logreg_pipeline.pkl'
 
 
