@@ -1,0 +1,35 @@
+text,label
+My item is completely defective and doesn't turn on,complaint
+This is the worst customer service experience I have ever had,complaint
+Where can I find your official privacy policy?,general_question
+"How should promotions or advertisements be handled? Block,reject or transfer?",general_question
+Can SF Express be used? Ground or air shipping?,logistics
+Product Origin,product_inquiry
+ok acknowledged copy that,unknown
+How to reply if the customer asks about cashback after purchase?,payment
+You charged me twice and your support is ignoring me,complaint
+Regions where shipping is unavailable?,logistics
+Are there any available helplines for emotional support?,self_harm_or_suicide_risk
+What are the complete dimensions of this item?,product_inquiry
+Reset password link is not sending to my email folder profile after 3 attempts,technical_support
+I am worried about my friend they are expressing thoughts of ending their life,self_harm_or_suicide_risk
+Who should I contact for press or media inquiries?,general_question
+Please cancel this transaction immediately,refund
+The application is experiencing technical issues during use,complaint
+My order hasn't arrived and I want to cancel for a full refund,refund
+testing punctuation errors !!! ??? @@@,unknown
+Can the shipping time be specified?,logistics
+Where is the logout button?,technical_support
+I am in a very dark place right now and need immediate assistance,self_harm_or_suicide_risk
+the message is acknowledged,unknown
+Can you explain the difference between the standard and pro versions?,product_inquiry
+Are there gifts?,payment
+Is this product recommended for outdoor use?,product_inquiry
+Can I exchange this product instead of getting a full refund?,refund
+a sequence of meaningless characters for the log files,unknown
+I need urgent help from a mental health professional right now,self_harm_or_suicide_risk
+The video viewer plugin is completely frozen on the dashboard,technical_support
+Information on the return process for items that do not fit.,refund
+Are there any discounts available for new customers?,payment
+Do you have an active affiliate program for content creators?,general_question
+My credit card keeps getting declined at checkout,payment
