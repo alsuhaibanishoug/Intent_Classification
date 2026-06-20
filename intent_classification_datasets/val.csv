@@ -1,0 +1,89 @@
+text,label
+Are your services available internationally?,general_question
+Do you have a sizing chart available for this clothing line?,product_inquiry
+Where can I find the delivery contact number?,logistics
+Shipping Address?,logistics
+Do you have an FAQ page?,general_question
+I was charged for an order I did not place,payment
+Can you tell me more about your company's sustainability initiatives?,general_question
+What is included in the package?,product_inquiry
+What is the difference between these two products?,product_inquiry
+Please give me your company phone number,general_question
+Who is delivering my order?,logistics
+The page layout looks distorted and broken on my safari browser,technical_support
+xyz12345abcdef67890,unknown
+My page keeps refreshing,technical_support
+How can I submit a business partnership proposal?,general_question
+What are the requirements for returning an opened product?,refund
+Which product do you recommend for beginners?,product_inquiry
+I am frustrated that the application keeps crashing every time I submit a report,complaint
+I received the wrong item and want a refund,refund
+Can I use a different payment method?,payment
+I am worried I will do something to myself,self_harm_or_suicide_risk
+Why is your service so slow?,complaint
+How do I add a new card?,payment
+I am worried about my friend they are expressing thoughts of ending their life,self_harm_or_suicide_risk
+What is the process for returns?,refund
+Why is this happening?,unknown
+Where can local crisis resources be found?,self_harm_or_suicide_risk
+Does this product need batteries?,product_inquiry
+What is going on?,unknown
+Life is too hard right now and I don't want to live anymore,self_harm_or_suicide_risk
+How long does shipping take?,logistics
+Please connect me with a professional support counselor immediately,self_harm_or_suicide_risk
+My order has not arrived yet,logistics
+Is this product easy to install?,product_inquiry
+Do you have this item in stock?,product_inquiry
+I need an answer,unknown
+Is your server down right now because nothing is loading on the mobile app?,technical_support
+What is your return policy?,general_question
+Product Origin,product_inquiry
+I need the courier contact for my shipment,logistics
+I accidentally ordered twice please cancel the second one and refund me,refund
+Invoice Format?,payment
+I've been waiting for hours and nobody has replied to my issue,complaint
+How do I log out of my profile?,technical_support
+Are there coupons? Are they collected by customers or issued by customer service?,payment
+Can I have your support phone number?,general_question
+What services do you provide?,general_question
+I am unhappy that my order arrived in a damaged condition,complaint
+Where is the text input confirmation?,unknown
+I am very dissatisfied because this is not what I ordered at all,complaint
+I feel completely overwhelmed by everything and have nowhere left to turn,self_harm_or_suicide_risk
+My package says delivered but I did not receive it,logistics
+I am not receiving notifications,technical_support
+My cancellation request was not processed,refund
+I need resources for emergency suicide prevention services in my area,self_harm_or_suicide_risk
+What is your privacy policy?,general_question
+This issue has not been handled properly,complaint
+I need a copy of my invoice,payment
+I cannot find how to sign out of my account,technical_support
+random alphabetic characters asdfghjkl,unknown
+Can the courier be specified?,logistics
+I need to exchange my item,refund
+Can I have the courier phone number?,logistics
+Where is the closest free anonymous crisis hotline I can call tonight?,self_harm_or_suicide_risk
+I am having urges to hurt myself,self_harm_or_suicide_risk
+a sequence of meaningless characters for the log files,unknown
+Why was my refund rejected?,refund
+Please help,unknown
+The product looks completely used and scratched up,complaint
+My credit card keeps getting declined at checkout,payment
+Where can I find your official privacy policy?,general_question
+The platform keeps freezing,technical_support
+I think I need emergency help,self_harm_or_suicide_risk
+testing punctuation errors !!! ??? @@@,unknown
+A request to cancel the order before processing,refund
+I was charged the wrong amount,payment
+I do not want to be here anymore,self_harm_or_suicide_risk
+Can I get an estimated delivery date?,logistics
+What accessories are included in the baseline box packaging?,product_inquiry
+The item does not work out of the box and I want a refund,refund
+How do I use my promo code?,payment
+Can you give me the suicide hotline number?,self_harm_or_suicide_risk
+I received poor customer service,complaint
+My tracking status has not changed,logistics
+The app closes when I open it,technical_support
+I am planning to hurt myself,self_harm_or_suicide_risk
+This is unacceptable service,complaint
+The api integration key is throwing an invalid signature response,technical_support
