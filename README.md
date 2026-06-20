@@ -9,10 +9,11 @@ Our core architecture is optimized for lightweight CPU deployment on local machi
 
 ## 📈 System Metrics Summary
 
-*   **Average Latency:** `13.97 ms` on standard MacBook CPU
-*   **P95 Operational Latency:** `15.97 ms` (95% of customer queries process under 16ms)
-*   **Throughput Capability:** ~71 requests per second per core
-*   **Final Test Accuracy / F1-Score:** `1.0000` across all 9 target intents
+*   **Average Latency:** `3.96 ms` on standard MacBook CPU
+*   **P95 Operational Latency:** `4.77 ms` (95% of customer queries process under 5ms)
+*   **Throughput Capability:** ~252 requests per second per core
+*   **Final Test Accuracy:** `0.9213` across all 9 target intents
+*   **ROC-AUC:** `0.9901` across all 9 target intents
 
 ---
 
@@ -20,9 +21,7 @@ Our core architecture is optimized for lightweight CPU deployment on local machi
 
 ```text
 ├── Notebooks/                                    # Research and development notebooks
-│   ├── data_augmentation.ipynb                   # MLM data augmentation script 
-│   ├── augmented_dataset_analysis.ipynb          # Dataset cleaning, conflict detection, and 3-way split code
-│   └── fineTuning_distillBERT.ipynb              # Fine-Tuning pipeline setup
+│   └── fineTuning_distillBERT.ipynb              # Dataset cleaning, 3-way split code, training data augmentation script, and Fine-Tuning pipeline setup
 ├── intent_model/                                 # Unzipped trained model binaries (config.json, weights)
 ├── intent_classification_datasets/               # Full data pipeline evolution directory
 │   ├── original_dataset.csv                      # Translated client data after Structural Audit & Relabeling
@@ -30,7 +29,7 @@ Our core architecture is optimized for lightweight CPU deployment on local machi
 │   ├── combined_dataset.csv                      # The initial merge of the past two datasets combined
 │   ├── data_new.csv                              # Cleaned dataset after Distribution Audit & Second-Pass Balancing
 │   ├── data_new_augmented_dataset.csv            # Final expanded dataset after Contextual MLM Augmentation
-│   └── test_cleaned.csv                          # 1,191 rows of clean holdout test dataset
+│   └── test_cleaned.csv                          # 89 rows of clean holdout test dataset
 ├── predict.py                                    # Live interactive local inference CLI script
 ├── evaluate_model.py                             # Latency benchmarking & performance reporting script
 └── README.md                                     # This file
