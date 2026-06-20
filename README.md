@@ -26,10 +26,10 @@ Our core architecture is optimized for lightweight CPU deployment on local machi
 ├── intent_classification_datasets/               # Full data pipeline evolution directory
 │   ├── original_dataset.csv                      # Translated client data after Structural Audit & Relabeling
 │   ├── synthetic_expanded_dataset.csv            # Generated text samples after Zero-Shot Missing Category Generation
-│   ├── combined_dataset.csv                      # The initial merge of the past two datasets combined
 │   ├── data_new.csv                              # Cleaned dataset after Distribution Audit & Second-Pass Balancing
-│   ├── data_new_augmented_dataset.csv            # Final expanded dataset after Contextual MLM Augmentation
-│   └── test_cleaned.csv                          # 89 rows of clean holdout test dataset
+│   ├── train_auhmented.csv                       # 
+│   ├── val.csv                                   # Final expanded dataset after Contextual MLM Augmentation
+│   └── test.csv                                  # 89 rows of clean holdout test dataset
 ├── predict.py                                    # Live interactive local inference CLI script
 ├── evaluate_model.py                             # Latency benchmarking & performance reporting script
 └── README.md                                     # This file
