@@ -4,7 +4,7 @@ import json
 import warnings
 warnings.filterwarnings("ignore")
 
-MODEL_PATH = 'models/logreg_pipeline.pkl'
+MODEL_PATH = 'experiment_model/naive_bayes_intent.joblib'
 
 
 def load_model_pipeline(path):
