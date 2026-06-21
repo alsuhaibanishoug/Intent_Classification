@@ -150,7 +150,7 @@ def main():
     throughput = 1000 / avg_latency
     
     overall_precision = precision_score(y_true,y_pred,average="macro",zero_division=0)
-    osverall_recall = recall_score(y_true,y_pred,average="macro",zero_division=0)
+    overall_recall = recall_score(y_true,y_pred,average="macro",zero_division=0)
     macro_auc = roc_auc_score(y_true, y_prob_matrix, multi_class="ovr", average="macro")
     weighted_auc = roc_auc_score(y_true, y_prob_matrix, multi_class="ovr", average="weighted")
 
