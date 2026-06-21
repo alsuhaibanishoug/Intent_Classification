@@ -4,8 +4,8 @@ import pandas as pd
 import joblib
 from sklearn.metrics import classification_report
 
-MODEL_PATH = 'logreg_pipeline.pkl'
-TEST_DATA_PATH = 'test_cleaned.csv'
+MODEL_PATH = 'experiment_model/naive_bayes_intent.joblib'
+TEST_DATA_PATH = 'intent_classification_datasets/test.csv'
 
 print("Loading model and test dataset...")
 try:
