@@ -23,13 +23,6 @@ Our core architecture is optimized for lightweight CPU deployment on local machi
 ├── experiment_model/                             # Saved model assets or experiment outputs
 ├── notebooks/                                    # Research and development notebooks
 │   └── fineTuning_distillBERT.ipynb              # Dataset cleaning, 3-way split code, training data augmentation script, and Fine-Tuning pipeline setup
-├── intent_classification_datasets/               # Full data pipeline evolution directory
-│   ├── original_dataset.csv                      # Translated client data after Structural Audit & Relabeling
-│   ├── synthetic_expanded_dataset.csv            # Generated text samples after Zero-Shot Missing Category Generation
-│   ├── data_new.csv                              # Cleaned dataset after Distribution Audit & Second-Pass Balancing
-│   ├── train_auhmented.csv                       # Augmented training data split 
-│   ├── val.csv                                   # Validation split on data_new.csv
-│   └── test.csv                                  # Test split on data_new.csv
 ├── predict.py                                    # Live interactive local inference CLI script
 ├── evaluate_model.py                             # Latency benchmarking & performance reporting script
 └── README.md                                     # This file
