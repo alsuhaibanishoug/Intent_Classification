@@ -7,7 +7,13 @@ import pandas as pd
 from transformers import AutoTokenizer, AutoConfig, AutoModelForSequenceClassification
 import torch
 import torch.nn.functional as F
-from sklearn.metrics import classification_report, accuracy_score, roc_auc_score
+from sklearn.metrics import (
+    classification_report,
+    accuracy_score,
+    roc_auc_score,
+    precision_score,
+    recall_score
+)
 
 warnings.filterwarnings("ignore")
 
@@ -142,7 +148,9 @@ def main():
     min_latency = np.min(latencies)
     max_latency = np.max(latencies)
     throughput = 1000 / avg_latency
-
+    
+    overall_precision = precision_score(y_true,y_pred,average="macro",zero_division=0)
+    osverall_recall = recall_score(y_true,y_pred,average="macro",zero_division=0)
     macro_auc = roc_auc_score(y_true, y_prob_matrix, multi_class="ovr", average="macro")
     weighted_auc = roc_auc_score(y_true, y_prob_matrix, multi_class="ovr", average="weighted")
 
@@ -163,6 +171,8 @@ def main():
     print(" 📈 INTEGRATED CLASSIFICATION PERFORMANCE MATRIX")
     print("=" * 65)
     print(f" Final System Test Accuracy : {accuracy_score(y_true, y_pred):.4f}")
+    print(f" Overall Macro Precision    : {overall_precision:.4f}")
+    print(f" Overall Macro Recall       : {overall_recall:.4f}")
     print(f" Macro-Averaged ROC-AUC     : {macro_auc:.4f}")
     print(f" Weighted-Averaged ROC-AUC  : {weighted_auc:.4f}")
     print("=" * 65)
