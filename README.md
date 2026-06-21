@@ -37,28 +37,6 @@ Our core architecture is optimized for lightweight CPU deployment on local machi
 
 ---
 
-## 📊 Dataset Pipeline Breakdown
-
-The `intent_classification_datasets/` folder contains the step-by-step evolution of our training data:
-
-1.  **`original_dataset.csv`**: The translated client data after our *Structural Audit & Relabeling* phase, mapping unstructured business rows to concrete engineering intent categories.
-2.  **`synthetic_expanded_dataset.csv`**: The baseline text entries generated during our *Zero-Shot Missing Category Generation* pass to create training data for missing target intents.
-3.  **`combined_dataset.csv`**: The unified merge combining both the mapped client rows and the first-pass generated missing categories.
-4.  **`data_new.csv`**: The dataset after our *Distribution Audit & Second-Pass Balancing* pass, bringing all categories to a perfectly even starting foundation of 25 rows per class.
-5.  **`data_new_augmented_dataset.csv`**: Our final production training data created after running the *Contextual Masked Language Modeling (MLM) Augmentation* engine, scaling our balanced rows up to a comprehensive, high-volume corpus.
-
----
-
-## 📓 Jupyter Notebooks Overview
-
-The developmental phase of this project is separated into three clean notebooks located inside the `notebooks/` directory:
-
-1.  **`data_augmentation.ipynb`**: Hosts our automated Masked Language Modeling (MLM) data augmentation engine. It leverages a pre-trained model to safely scale each target class up toward our 1,000 balanced rows goal while protecting key intent keywords from modification.
-2.  **`augmented_dataset_analysis.ipynb`**: Handles dataset diagnostics and data health checks. It performs lowercase string cleaning, strips layout noise, scans for semantic cross-label text conflicts, maps string labels to integer tracking IDs, and generates our stratified 70/15/15 train, validation, and test splits.
-3.  **`fineTuning_distillBERT.ipynb`**: Handles the final PyTorch fine-tuning workflow loop. It sets up the gradient optimization pipeline over our clean data splits, injects weight decay regularization to stop text memorization, and manages training termination via early stopping callbacks.
-
----
-
 ## 🚀 Local Deployment: How to Run Inference
 
 If you would like to clone this repository and run live intent classification predictions locally on your computer, follow these quick setup instructions:
@@ -72,8 +50,8 @@ pip install transformers torch pandas scikit-learn
 *(Note: Using standard DistilBERT architectures with older local environment parameters may require a `transformers==4.40.0` environment match).*
 
 ### Step 2: Download & Extract the Model Files
-1. Ensure the `intent_model` directory is unzipped and placed in the root folder of this project.
-2. Confirm the directory contains `config.json`, `model.safetensors`([which lives here](https://github.com/alsuhaibanishoug/Intent_Classification/releases/tag/v1.0.1)), and `tokenizer_config.json` inside it.
+1. Ensure the `intent_model`([which lives here](https://github.com/alsuhaibanishoug/Intent_Classification/releases/download/v2.0.1/intent_model.zip)) directory is unzipped and placed in the root folder of this project.
+2. Confirm the directory contains `config.json`, `model.safetensors`, and `tokenizer_config.json` inside it.
 
 ### Step 3: Run the Live Interactive CLI
 To launch the interactive command-line tool where you can test your custom storefront phrases:
@@ -117,9 +95,8 @@ For a thorough breakdown of our entire engineering workflow, datasets, and regul
     * Explains our zero-shot missing category synthesis and Masked Language Modeling (MLM) data augmentation rules to reach our balanced dataset layout.
 2. **[Wiki Part 2: Model Architecture & Fine-Tuning Pipeline Guide](https://github.com/alsuhaibanishoug/Intent_Classification/wiki/Wiki-Part-2:-Model-Architecture-&-Fine%E2%80%90Tuning-Pipeline-Guide)**
     * Detailing why we chose Transfer Learning over Classical ML or training Deep Learning layers from scratch.
-    * Outlines our overfitting defense safeguards: Weight Decay (`0.1`) and `EarlyStoppingCallback` circuit breakers.
+    * Outlines our overfitting defense safeguards: Weight Decay (`0.01`) and `EarlyStoppingCallback` circuit breakers.
     * Provides the complete post-execution training performance logs.
 3. **[Wiki Part 3: Local Evaluation & Latency Benchmarks Guide](https://github.com/alsuhaibanishoug/Intent_Classification/wiki/Wiki-Part-3:-Local-Evaluation-&-Latency-Benchmarks-Guide)**
     * Documents our local CPU cache warm-up and time-delta evaluation strategy.
-    * Contains the final complete classification matrix table mapping 100% precision and recall metrics across our test environment.
-
+    * Contains the final complete classification matrix table mapping 99% ROC-AUC metrics across our test environment.
