@@ -3,7 +3,7 @@
 
 A high-performance, low-latency, and cost-efficient intent classification system built on top of **DistilBERT** (`distilbert-base-uncased`). This engine dynamically maps user storefront queries into 9 distinct business intent classes. 
 
-Our core architecture is optimized for lightweight CPU deployment on local machines, achieving sub-16 millisecond inference speeds with 100% test classification accuracy.
+Our core architecture is optimized for lightweight CPU deployment on local machines, achieving sub-5 millisecond inference speeds with 92% test classification accuracy.
 
 ---
 
@@ -20,16 +20,16 @@ Our core architecture is optimized for lightweight CPU deployment on local machi
 ## 📂 Repository Structure
 
 ```text
-├── Notebooks/                                    # Research and development notebooks
+├── experiment_model/                             # Saved model assets or experiment outputs
+├── notebooks/                                    # Research and development notebooks
 │   └── fineTuning_distillBERT.ipynb              # Dataset cleaning, 3-way split code, training data augmentation script, and Fine-Tuning pipeline setup
-├── intent_model/                                 # Unzipped trained model binaries (config.json, weights)
 ├── intent_classification_datasets/               # Full data pipeline evolution directory
 │   ├── original_dataset.csv                      # Translated client data after Structural Audit & Relabeling
 │   ├── synthetic_expanded_dataset.csv            # Generated text samples after Zero-Shot Missing Category Generation
 │   ├── data_new.csv                              # Cleaned dataset after Distribution Audit & Second-Pass Balancing
-│   ├── train_auhmented.csv                       # 
-│   ├── val.csv                                   # Final expanded dataset after Contextual MLM Augmentation
-│   └── test.csv                                  # 89 rows of clean holdout test dataset
+│   ├── train_auhmented.csv                       # Augmented training data split 
+│   ├── val.csv                                   # Validation split on data_new.csv
+│   └── test.csv                                  # Test split on data_new.csv
 ├── predict.py                                    # Live interactive local inference CLI script
 ├── evaluate_model.py                             # Latency benchmarking & performance reporting script
 └── README.md                                     # This file
