@@ -43,7 +43,7 @@ pip install -r requirements.txt
 *(Note: Using standard DistilBERT architectures with older local environment parameters may require a `transformers==4.40.0` environment match).*
 
 ### Step 2: Download & Extract the Model Files
-1. Ensure the `intent_model`([which lives here](https://github.com/alsuhaibanishoug/Intent_Classification/releases/download/v2.0.1/intent_model.zip)) directory is unzipped and placed in the root folder of this project.
+1. Ensure the `intent_model`([which lives here](https://github.com/alsuhaibanishoug/Intent_Classification/releases/download/v2.0.2/intent_model.zip)) directory is unzipped and placed in the root folder of this project.
 2. Confirm the directory contains `config.json`, `model.safetensors`, and `tokenizer_config.json` inside it.
 
 ### Step 3: Run the Live Interactive CLI
