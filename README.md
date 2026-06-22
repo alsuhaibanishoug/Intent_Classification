@@ -76,10 +76,11 @@ To re-verify our system latency benchmarks and confirm the classification matrix
 python evaluate_model.py
 ```
 ---
-## 🚀 Streamlit 
-- 🎨 **Web interface** to classify customer support messages in real time.
+### ✨ Streamlit
+Web interface to classify customer support messages in real time. 
+
 ---
-## ✨ Features
+## 🌟 Features
 - 🎨 **Beautiful UI**: Modern animated interface with gradient backgrounds and smooth transitions
 - 📊 **Advanced Analytics**: Real-time confidence scores, top 3 predictions, and intent distribution charts
 - ✅ **Input Validation**: Live validation with helpful error messages
