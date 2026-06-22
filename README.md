@@ -76,51 +76,97 @@ To re-verify our system latency benchmarks and confirm the classification matrix
 python evaluate_model.py
 ```
 ---
-### ✨ Streamlit
-Web interface to classify customer support messages in real time. 
+## ✨ Streamlit Web Application
+
+An interactive web application built with Streamlit that allows users to classify customer service messages in real time using the fine-tuned DistilBERT model.
+
+### 🌟 Features
+- 🎨 **Modern User Interface**
+  - Gradient backgrounds and animated components.
+  - Clean and responsive layout.
+
+- ✅ **Live Input Validation**
+  - Validates user input before classification.
+  - Displays clear error messages and requirement checks.
+
+- 🤖 **Real-Time Intent Classification**
+  - Predicts one of the nine customer service intents.
+  - Displays the primary predicted intent with confidence score.
+
+- 📊 **Prediction Analytics**
+  - Top 3 predicted intents with confidence percentages.
+  - Intent probability distribution charts.
+  - Inference time and prediction timestamp.
+
+- 🚩 **Human Review Flag**
+  - Automatically flags low-confidence predictions for manual review.
+
+- 🎯 **Priority Detection**
+  - Displays message urgency levels (Low, Medium, High, Critical).
+
+- 📱 **Responsive Design**
+  - Works on desktop and mobile devices.
 
 ---
-## 🌟 Features
-- 🎨 **Beautiful UI**: Modern animated interface with gradient backgrounds and smooth transitions
-- 📊 **Advanced Analytics**: Real-time confidence scores, top 3 predictions, and intent distribution charts
-- ✅ **Input Validation**: Live validation with helpful error messages
-- 🎯 **Priority Levels**: Classifies messages by emergency/priority levels
-- 🎭 **Responsive Design**: Works seamlessly on desktop and mobile devices
+
+## 🚀 Running the Streamlit Application
+
+### 1. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 2. Launch the Application
+```bash
+streamlit run ui_app.py
+```
+
+The application will open automatically at:
+
+```text
+http://localhost:8501
+```
 
 ---
 
-## 📋 Requirements
-- **Dependencies**:
-  - `streamlit` (>=1.28.0)
+## 🖥️ How to Use
+
+### Step 1 – Enter a Message
+Type or paste a customer support message into the text box.
+
+### Step 2 – Validate Input
+The application performs live validation and ensures that all requirements are satisfied.
+
+### Step 3 – Classify
+Click the **Classify** button to generate a prediction.
+
+### Step 4 – Review Results
+The application displays:
+
+- Predicted intent
+- Confidence score
+- Priority level
+- Top 3 candidate intents
+- Human review recommendation (if needed)
+- Inference latency and timestamp
+
+### Step 5 – Try Another Message
+Click **Clear** to reset the form and classify another message.
+
 ---
 
-## 🚀 Running the Application
-### Step-by-Step:
-1. **Launch the App**:
-   ```bash
-   streamlit run ui_app.py
-   ```
-   The app will open in your default browser at `http://localhost:8501`
+## 📸 Streamlit Interface
 
-2. **Enter Your Message**:
-   - Type or paste a customer service message in the text area
-   - The app validates input in real-time
+Add screenshots of:
+- Home page
+- Validation panel
+- Prediction results
+- Analytics dashboard
 
-3. **Click "Classify"**:
-   - The model processes your input
-   - Displays the primary classification result with emoji
-   - Shows confidence percentage
+## 📝 License
+Created by **Fahim Team** © 2026
 
-4. **Review Results**:
-   - **Classification Details**: Primary intent, confidence level, priority level
-   - **Top 3 Candidates**: Ranked predictions with descriptions and confidence scores
-   - **Metrics**: Inference time and timestamp
-
-5. **Clear & Retry**:
-   - Click "Clear" to reset the input
-   - Try new messages
 ---
-
 ## 📖 Deep-Dive Project Wiki Pages
 
 For a thorough breakdown of our entire engineering workflow, datasets, and regularization strategies, review our dedicated project wiki entries:
