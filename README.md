@@ -122,13 +122,7 @@ python evaluate_model.py
 5. **Clear & Retry**:
    - Click "Clear" to reset the input
    - Try new messages
-
 ---
-## 📝 License
-Created by **Fahim Team** © 2026
----
-
-**Happy Classifying! 🚀**
 
 ## 📖 Deep-Dive Project Wiki Pages
 
