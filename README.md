@@ -20,11 +20,11 @@ Our core architecture is optimized for lightweight CPU deployment on local machi
 ## 📂 Repository Structure
 
 ```text
-├── experiment_model/                             # Saved model assets or experiment outputs
 ├── notebooks/                                    # Research and development notebooks
 │   └── fineTuning_distillBERT.ipynb              # Dataset cleaning, 3-way split code, training data augmentation script, and Fine-Tuning pipeline setup
 ├── predict.py                                    # Live interactive local inference CLI script
 ├── evaluate_model.py                             # Latency benchmarking & performance reporting script
+├── ui_app.py                                     # Streamlit web interface script
 └── README.md                                     # This file
 ```
 
@@ -38,7 +38,7 @@ If you would like to clone this repository and run live intent classification pr
 Open your local Terminal or Command Prompt and install the lightweight CPU versions of the required machine learning packages:
 
 ```bash
-pip install transformers torch pandas scikit-learn
+pip install -r requirements.txt
 ```
 *(Note: Using standard DistilBERT architectures with older local environment parameters may require a `transformers==4.40.0` environment match).*
 
@@ -168,7 +168,6 @@ For a thorough breakdown of our entire engineering workflow, datasets, and regul
     * Documents structural category relabeling matching the client brief.
     * Explains our zero-shot missing category synthesis and Masked Language Modeling (MLM) data augmentation rules to reach our balanced dataset layout.
 2. **[Wiki Part 2: Model Architecture & Fine-Tuning Pipeline Guide](https://github.com/alsuhaibanishoug/Intent_Classification/wiki/Wiki-Part-2:-Model-Architecture-&-Fine%E2%80%90Tuning-Pipeline-Guide)**
-    * Detailing why we chose Transfer Learning over Classical ML or training Deep Learning layers from scratch.
     * Outlines our overfitting defense safeguards: Weight Decay (`0.01`) and `EarlyStoppingCallback` circuit breakers.
     * Provides the complete post-execution training performance logs.
 3. **[Wiki Part 3: Local Evaluation & Latency Benchmarks Guide](https://github.com/alsuhaibanishoug/Intent_Classification/wiki/Wiki-Part-3:-Local-Evaluation-&-Latency-Benchmarks-Guide)**
