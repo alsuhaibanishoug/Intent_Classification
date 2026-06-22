@@ -13,7 +13,6 @@ import plotly.express as px
 import numpy as np
 import re
 
-
 # ========================================
 # PAGE CONFIGURATION
 # ========================================
@@ -25,7 +24,6 @@ st.set_page_config(
         "About": "Professional Intent Classification Service\nEnterprise-Grade AI Solution"
     }
 )
-
 
 # ========================================
 # PROFESSIONAL COLOR SCHEME
@@ -50,7 +48,7 @@ COLORS = {
 def apply_animated_theme():
     st.markdown(f"""
     <style>
-        /* Root Variables */
+        
         :root {{
             --primary: {COLORS['primary']};
             --secondary: {COLORS['secondary']};
@@ -58,8 +56,7 @@ def apply_animated_theme():
             --highlight: {COLORS['highlight']};
         }}
 
-        /* Animated Background */
-        .stApp {{
+       .stApp {{
             background: linear-gradient(-45deg, #F8F5FF, #F0E6FF, #FFF9E6, #F5F7FA);
             background-size: 400% 400%;
             animation: gradientShift 15s ease infinite;
@@ -71,7 +68,6 @@ def apply_animated_theme():
             100% {{ background-position: 0% 50%; }}
         }}
 
-
         h2 {{
             border-bottom: 2px solid {COLORS['secondary']};
             padding-bottom: 12px;
@@ -81,8 +77,7 @@ def apply_animated_theme():
             animation: borderSlide 0.8s ease-out;
         }}
 
-        /* Animated Prediction Display */
-        .prediction-display {{
+       .prediction-display {{
             background: linear-gradient(135deg, {COLORS['primary']} 0%, {COLORS['accent']} 100%);
             color: white;
             padding: 48px;
@@ -93,16 +88,6 @@ def apply_animated_theme():
             position: relative;
             overflow: hidden;
             animation: bounceIn 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }}
-
-
-        @keyframes shimmer {{
-            0% {{
-                transform: translate(-100%, -100%) rotate(45deg);
-            }}
-            100% {{
-                transform: translate(100%, 100%) rotate(45deg);
-            }}
         }}
 
         @keyframes bounceIn {{
@@ -118,7 +103,7 @@ def apply_animated_theme():
             }}
         }}
 
-        .prediction-display h1 {{
+       .prediction-display h1 {{
             color: {COLORS['highlight']};
             font-size: 3.2rem;
             margin: 16px 0;
@@ -133,7 +118,7 @@ def apply_animated_theme():
             50% {{ text-shadow: 0 0 20px rgba(255,221,121,0.6); }}
         }}
 
-        .prediction-display h3 {{
+       .prediction-display h3 {{
             color: white;
             font-size: 1.4rem;
             font-weight: 500;
@@ -141,8 +126,7 @@ def apply_animated_theme():
             z-index: 2;
         }}
 
-        /* Animated Buttons */
-        .stButton > button {{
+       .stButton > button {{
             border-radius: 8px;
             height: 43px;
             font-weight: 600;
@@ -150,34 +134,30 @@ def apply_animated_theme():
             border: none;
             transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
             width: 100%;
-            background: linear-gradient(135deg, {COLORS['primary']}, {COLORS['accent']}) !important;
-            color: white !important;
-            box-shadow: 0 4px 12px rgba(92, 115, 178, 0.2) !important;
+            background: linear-gradient(135deg, {COLORS['primary']}, {COLORS['accent']})!important;
+            color: white!important;
+            box-shadow: 0 4px 12px rgba(92, 115, 178, 0.2)!important;
             position: relative;
             overflow: hidden;
             animation: slideInUp 0.6s ease-out;
         }}
 
-        .stButton > button:hover {{
+       .stButton > button:hover {{
             transform: translateY(-3px);
-            box-shadow: 0 8px 24px rgba(92, 115, 178, 0.4) !important;
+            box-shadow: 0 8px 24px rgba(92, 115, 178, 0.4)!important;
         }}
 
-
-        /* Animated Text Area " classification message "  */
         textarea {{
-            border-radius: 10px !important;
-            border: 2px solid {COLORS['border']} !important;
-            background-color: white !important;
-            color: {COLORS['dark_text']} !important;
-            font-size: 1rem !important;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+            border-radius: 10px!important;
+            border: 2px solid {COLORS['border']}!important;
+            background-color: white!important;
+            color: {COLORS['dark_text']}!important;
+            font-size: 1rem!important;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif!important;
             transition: all 0.3s ease;
         }}
 
-
-        /* Animated Progress Bar */
-        .stProgress > div > div {{
+       .stProgress > div > div {{
             background: linear-gradient(90deg, {COLORS['primary']}, {COLORS['secondary']}, {COLORS['accent']});
             background-size: 200% 100%;
             animation: progressGlow 2s ease infinite;
@@ -188,28 +168,10 @@ def apply_animated_theme():
             0%, 100% {{
             background-position: 0% center;
             box-shadow: 0 0 8px rgba(92, 115, 178, 0.3);
-
             }}
             50% {{
             background-position: 100% center;
             box-shadow: 0 0 16px rgba(92, 115, 178, 0.6);
-
-            }}
-        }}
-
-        @keyframes gradientMove {{
-            0% {{background-position: 0% center;}}
-            100% {{background-position: 200% center;}}
-        }}
-
-        @keyframes slideInRight {{
-            from {{
-                opacity: 0;
-                transform: translateX(20px);
-            }}
-            to {{
-                opacity: 1;
-                transform: translateX(0);
             }}
         }}
 
@@ -224,18 +186,18 @@ def apply_animated_theme():
             }}
         }}
 
-        @keyframes slideInDown {{
+        @keyframes slideInRight {{
             from {{
                 opacity: 0;
-                transform: translateY(-20px);
+                transform: translateX(20px);
             }}
             to {{
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateX(0);
             }}
         }}
 
-        .rule-card {{
+       .rule-card {{
             padding: 12px 8px;
             margin-bottom: 16px;
             font-size: 0.5rem;
@@ -243,7 +205,6 @@ def apply_animated_theme():
             border-left: 4px solid;
             transition: all 0.3s ease;
             animation: fadeInUp 0.4s ease-out;
-
         }}
 
         @keyframes fadeInUp {{
@@ -261,17 +222,15 @@ def apply_animated_theme():
     """, unsafe_allow_html=True)
 
 apply_animated_theme()
+
 # ========================================
 # ANIMATED LOADING SPINNER
 # ========================================
 def animated_spinner(text: str, duration: float = 2):
-    """Custom animated spinner"""
     spinner_frames = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"]
     placeholder = st.empty()
-
     start_time = time.time()
     frame_index = 0
-
     while time.time() - start_time < duration:
         placeholder.write(f"{spinner_frames[frame_index % len(spinner_frames)]} {text}")
         frame_index += 1
@@ -282,7 +241,6 @@ def animated_spinner(text: str, duration: float = 2):
 # SESSION STATE INITIALIZATION
 # ========================================
 def init_session_state():
-    """Initialize session state"""
     try:
         defaults = {
             "prediction_history": [],
@@ -294,11 +252,9 @@ def init_session_state():
             "last_text": "",
             "show_validation": True,
         }
-
         for key, value in defaults.items():
             if key not in st.session_state:
                 st.session_state[key] = value
-
     except Exception as e:
          return {"status": "error", "message": str(e)}
 
@@ -309,20 +265,16 @@ init_session_state()
 # ========================================
 @st.cache_resource
 def load_model() -> Tuple[Optional[object], Optional[object], bool, str]:
-    """Load model with error handling"""
     try:
         with st.spinner("🚀 Initializing AI Model..."):
             MODEL_PATH = 'intent_model'
-
             if not Path(MODEL_PATH).exists():
                 error_msg = f"Model path not found: {MODEL_PATH}"
                 return None, None, False, error_msg
-
             model = AutoModelForSequenceClassification.from_pretrained(MODEL_PATH)
             tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)
             model.eval()
             return model, tokenizer, True, "Success"
-
     except Exception as e:
         error_msg = f"Model loading failed: {str(e)}"
         return None, None, False, error_msg
@@ -376,14 +328,14 @@ INTENT_EMOJIS = {
 # ========================================
 EMERGENCY_LEVELS = {
     "self_harm_or_suicide_risk": 1,
-    "complaint":                 2,
-    "refund":                    3,
-    "payment":                   4,
-    "logistics":                 5,
-    "technical_support":         6,
-    "product_inquiry":           7,
-    "general_question":          8,
-    "unknown":                   9,
+    "complaint": 2,
+    "refund": 3,
+    "payment": 4,
+    "logistics": 5,
+    "technical_support": 6,
+    "product_inquiry": 7,
+    "general_question": 8,
+    "unknown": 9,
 }
 
 EMERGENCY_COLORS = {
@@ -393,10 +345,10 @@ EMERGENCY_COLORS = {
 }
 
 EMERGENCY_LABELS = {
-    1: "🚨 CRITICAL",   2: "🔴 HIGH",
-    3: "🟠 ELEVATED",   4: "🟡 MEDIUM-HIGH",
-    5: "🟡 MEDIUM",     6: "🟢 LOW-MEDIUM",
-    7: "🟢 LOW",        8: "🔵 MINIMAL",
+    1: "🚨 CRITICAL", 2: "🔴 HIGH",
+    3: "🟠 ELEVATED", 4: "🟡 MEDIUM-HIGH",
+    5: "🟡 MEDIUM", 6: "🟢 LOW-MEDIUM",
+    7: "🟢 LOW", 8: "🔵 MINIMAL",
     9: "⚪ NONE",
 }
 
@@ -404,40 +356,31 @@ EMERGENCY_LABELS = {
 # ENHANCED LIVE VALIDATION SYSTEM
 # ========================================
 class ValidationRules:
-    """ input validation """
-    # Constants
     MIN_LENGTH = 3
     MAX_LENGTH = 500
+
     @staticmethod
     def validate_text(text: str) -> Dict[str, Dict]:
-        """
-        Comprehensive validation with detailed feedback
-        Returns: Dict with status and messages for each rule
-        """
         text_stripped = text.strip() if text else ""
         text_length = len(text_stripped)
-
         rules = {
             "min_length": {
                 "passed": text_length >= ValidationRules.MIN_LENGTH if text else False,
                 "label": "Minimum Length",
                 "icon": "✅" if text_length >= ValidationRules.MIN_LENGTH else "❌",
                 "message": f"{text_length}/{ValidationRules.MIN_LENGTH} characters",
-
             },
             "has_letters": {
                 "passed": bool(any(c.isalpha() for c in text)) if text else False,
                 "label": "No Number only",
                 "icon": "✅" if any(c.isalpha() for c in text) else "❌",
                 "message": "Contains mixed characters" if any(c.isalpha() for c in text) else "Only numeric input detected"
-
             },
             "not_numbers_only": {
                 "passed": not text_stripped.isdigit() if text else False,
                 "label": "Letters Only",
                 "icon": "✅" if not text_stripped.isdigit() else "❌",
                 "message": "Mix of content types" if not text_stripped.isdigit() else "Only numeric characters",
-
             },
             "max_length": {
                 "passed": text_length <= ValidationRules.MAX_LENGTH if text else True,
@@ -447,29 +390,24 @@ class ValidationRules:
                 "warning": text_length > ValidationRules.MAX_LENGTH * 0.85
             },
             "no_special_characters": {
-              "passed": bool(text and text.isalnum() or " " in text) if text else False,
-              "label": "No Symbols ",
-             "icon": "✅" if (text and text.isalnum() or " " in text) else "❌",
-              "message": "Letters & Numbers Only",
-
-},
+                "passed": bool(text and text.isalnum() or " " in text) if text else False,
+                "label": "No Symbols ",
+                "icon": "✅" if (text and text.isalnum() or " " in text) else "❌",
+                "message": "Letters & Numbers Only",
+            },
         }
         return rules
 
-    # ──  Validation utilities for text input. ─────────────────────────────
     @staticmethod
     def is_valid(text: str) -> bool:
-        """Check if all validation rules pass"""
         rules = ValidationRules.validate_text(text)
         return all(rule["passed"] for rule in rules.values())
 
     @staticmethod
     def get_validation_summary(text: str) -> Dict:
-        """ Get overall validation status and progress """
         rules = ValidationRules.validate_text(text)
         passed_count = sum(1 for rule in rules.values() if rule["passed"])
         total_count = len(rules)
-
         return {
             "is_valid": all(rule["passed"] for rule in rules.values()),
             "passed_count": passed_count,
@@ -478,15 +416,10 @@ class ValidationRules:
             "message": f"{passed_count}/{total_count} requirements met"
         }
 
-    # ──  Header " ✓ INPUT REQUIREMENTS  ─────────────────────────────
     @staticmethod
     def display_live_validation(text: str):
-        """ Display real-time validation feedback with animations """
         rules = ValidationRules.validate_text(text)
         summary = ValidationRules.get_validation_summary(text)
-
-
-        # ──  Header " ✓ INPUT REQUIREMENTS  ─────────────────────────────
         st.markdown(f"""
         <div style="
             padding: 9px 16px;
@@ -521,41 +454,6 @@ class ValidationRules:
         </div>
         """, unsafe_allow_html=True)
 
-
-        # ── Character counter with color coding ─────────────────────────────
-        text_length = len(text.strip()) if text else 0
-        if text_length == 0:
-            counter_class = "neutral"
-            counter_text = "0/500 characters"
-            counter_color = "#94A3B8"
-        elif text_length < 50:
-            counter_class = "safe"
-            counter_text = f"{text_length}/500 characters"
-            counter_color = "#10B981"
-        elif text_length < 450:
-            counter_class = "safe"
-            counter_text = f"{text_length}/500 characters"
-            counter_color = "#10B981"
-        else:
-            counter_class = "warning"
-            counter_text = f"{text_length}/500 characters (⚠️ Approaching limit)"
-            counter_color = "#F59E0B"
-
-        st.markdown(f"""
-        <div style="
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 6px;
-            padding: 0 4px;
-        ">
-            <span style="color: {counter_color}; font-weight: 600; font-size: 0.8rem;">
-                {counter_text}
-            </span>
-        </div>
-        """, unsafe_allow_html=True)
-
-        # ── VALIDATION RULES GRID  ─────────────────────────────
         rule_configs = [
             {"key": "no_special_characters", "emoji_pass": "🔤", "emoji_fail": "🚫"},
             {"key": "min_length", "emoji_pass": "📏", "emoji_fail": "📏"},
@@ -568,29 +466,24 @@ class ValidationRules:
         for idx, config in enumerate(rule_configs):
             rule = rules[config["key"]]
             col = col1 if idx % 2 == 0 else col2
-
-            # ── DETERMINE STYLING  ─────────────────────────────
-            if not text.strip() and config["key"] != "max_length":
+            if not text.strip() and config["key"]!= "max_length":
                 status_class = "neutral"
                 bg_color = "rgba(148, 163, 184, 0.05)"
                 border_color = "#CBD5E1"
                 text_color = "#64748B"
                 status_icon = ""
-
             elif rule["passed"]:
                 status_class = "pass"
                 bg_color = "rgba(16, 185, 129, 0.08)"
                 border_color = "#10B981"
                 text_color = "#065F46"
                 status_icon = "✅"
-
             else:
                 status_class = "fail"
                 bg_color = "rgba(239, 68, 68, 0.08)"
                 border_color = "#EF4444"
                 text_color = "#7F1D1D"
                 status_icon = "❌"
-
             with col:
                 st.markdown(f"""
                 <div class="rule-card {status_class}" style="
@@ -624,18 +517,16 @@ class ValidationRules:
                             </div>
                         </div>
                 """, unsafe_allow_html=True)
+
 # ========================================
 # PREDICTION ENGINE
 # ========================================
 class PredictionEngine:
-    """ Enterprise prediction engine"""
     @staticmethod
     @st.cache_data(show_spinner=False)
     def predict(text: str) -> Dict:
-        """Perform intent classification"""
         try:
             start_time = time.time()
-            # ── Tokenization ─────────────────────────────
             inputs = tokenizer(
                 text,
                 return_tensors="pt",
@@ -644,8 +535,6 @@ class PredictionEngine:
                 padding=True
             )
             inputs.pop("token_type_ids", None)
-
-            # ── Inference ────────────────────────────────
             with torch.no_grad():
                 outputs = model(**inputs)
                 logits = outputs.logits
@@ -653,7 +542,6 @@ class PredictionEngine:
             if isinstance(probabilities, float):
                 probabilities = [probabilities]
 
-            # ── Build scores ─────────────────────────────
             intent_scores = [
                 {
                     "intent": INTENT_LABELS[idx],
@@ -663,22 +551,28 @@ class PredictionEngine:
                 }
                 for idx, prob in enumerate(probabilities)
             ]
-            # ── Sort by confidence ───────────────────────
             intent_scores.sort(key=lambda x: x["confidence"], reverse=True)
             inference_time = time.time() - start_time
 
-            # ── RETURN (NO THRESHOLD LOGIC) ──────────────
+            # Human Review Logic: threshold = 0.75
+            threshold = 0.75
+            top_intent = intent_scores[0]["intent"]
+            top_confidence = intent_scores[0]["confidence"]
+            # Force human review for safety category
+            requires_review = top_confidence < threshold or top_intent == "self_harm_or_suicide_risk"
+
             return {
                 "status": "success",
-                "predicted_intent": intent_scores[0]["intent"],
-                "confidence": intent_scores[0]["confidence"],
+                "predicted_intent": top_intent,
+                "confidence": top_confidence,
                 "top_3_intents": intent_scores[:3],
                 "all_intents": intent_scores,
                 "inference_time_ms": round(inference_time * 1000, 2),
-                "timestamp": datetime.now().isoformat()
+                "timestamp": datetime.now().isoformat(),
+                "requires_human_review": requires_review
             }
         except Exception as e:
-            return { "status": "error", "message": str(e)}
+            return {"status": "error", "message": str(e)}
 
 # ========================================
 # HEADER
@@ -694,12 +588,6 @@ st.markdown("---")
 # ========================================
 # MAIN INPUT SECTION WITH LIVE VALIDATION
 # ========================================
-
-#if "show_validation" not in st.session_state:
-   # st.session_state.show_validation = True
-#if "last_text" not in st.session_state:
-    #st.session_state.last_text = ""
-
 st.markdown("<h2> Classification Request</h2>", unsafe_allow_html=True)
 
 col1, col2 = st.columns([2.5, 1.3])
@@ -709,21 +597,18 @@ with col1:
         height=150,
         placeholder=" Provide the customer message or query for intent classification...")
     is_input_valid = ValidationRules.is_valid(user_text)
-    if user_text != st.session_state.last_text:
+    if user_text!= st.session_state.last_text:
       st.session_state.last_text = user_text
       st.session_state.show_validation = True
 with col2:
-    # ── Cancel validation rules only after all conditions have been verified ─────────────────────────────
     if st.session_state.show_validation and not is_input_valid:
         ValidationRules.display_live_validation(user_text or "")
 
 st.markdown("<div style='height:30px'></div>", unsafe_allow_html=True)
 
-
-# ── Action buttons ─────────────────────────────
 btn_col2, btn_col3 = st.columns(2)
 with btn_col2:
-        submit_btn = st.button(
+    submit_btn = st.button(
         "🚀 Classify",
         type="primary",
         use_container_width=True,
@@ -744,89 +629,82 @@ with btn_col3:
 # PREDICTION PROCESSING WITH ANIMATIONS
 # ========================================
 if submit_btn:
-
-    # ── Check empty  ─────────────────────────────
     if not user_text or not user_text.strip():
         st.error("Please provide text for classification")
         st.stop()
 
     if not ValidationRules.is_valid(user_text):
-        st.error("Please satisty all requirements before classification ")
+        st.error("Please satisfy all requirements before classification ")
         st.stop()
 
     st.session_state.show_validation = False
     try:
-            prediction = PredictionEngine.predict(user_text)
-            if prediction["status"] == "error":
-                st.error(f"Classification Error: {prediction['message']}")
-            else:
-                st.session_state.total_predictions += 1
-                st.session_state.prediction_history.append({
-                    "text": user_text,
-                    "intent": prediction["predicted_intent"],
-                    "confidence": prediction["confidence"],
-                    "timestamp": datetime.now()
-                })
+        prediction = PredictionEngine.predict(user_text)
+        if prediction["status"] == "error":
+            st.error(f"Classification Error: {prediction['message']}")
+        else:
+            st.session_state.total_predictions += 1
+            st.session_state.prediction_history.append({
+                "text": user_text,
+                "intent": prediction["predicted_intent"],
+                "confidence": prediction["confidence"],
+                "timestamp": datetime.now()
+            })
 
-                intent = prediction["predicted_intent"]
-                if intent not in st.session_state.intent_distribution:
-                    st.session_state.intent_distribution[intent] = 0
-                st.session_state.intent_distribution[intent] += 1
-                st.markdown("---")
+            intent = prediction["predicted_intent"]
+            if intent not in st.session_state.intent_distribution:
+                st.session_state.intent_distribution[intent] = 0
+            st.session_state.intent_distribution[intent] += 1
+            st.markdown("---")
 
+            emoji = INTENT_EMOJIS.get(prediction['predicted_intent'], "")
+            emergency_level = EMERGENCY_LEVELS.get(prediction['predicted_intent'], 9)
+            emergency_color = EMERGENCY_COLORS.get(emergency_level, "#95A5A6")
+            emergency_label = EMERGENCY_LABELS.get(emergency_level, "⚪ NONE")
 
+            st.markdown(f"""
+            <div class='prediction-display animate-in' style='border: 3px solid {emergency_color};'>
+                <h3>Classification Result</h3>
+                <h1>{emoji} {prediction['predicted_intent'].replace('_', ' ').upper()}</h1>
+            </div>
+            """, unsafe_allow_html=True)
 
-                # ── PRIMARY RESULT WITH ANIMATION AND EMERGENCY LEVEL  ─────────────────────────────
-                emoji = INTENT_EMOJIS.get(prediction['predicted_intent'], "")
-                emergency_level = EMERGENCY_LEVELS.get(prediction['predicted_intent'], 9)
-                emergency_color = EMERGENCY_COLORS.get(emergency_level, "#95A5A6")
-                emergency_label = EMERGENCY_LABELS.get(emergency_level, "⚪ NONE")
+            # DETAILED METRICS - 4 BOXES NOW
+            st.markdown("<h2> Classification Details </h2>", unsafe_allow_html=True)
+            metric_col1, metric_col2, metric_col3, metric_col4 = st.columns([1.5, 1, 1.3, 1.2], gap="small")
+            with metric_col1:
+                st.metric("Primary Classification", prediction["predicted_intent"].replace("_", " ").title())
+            with metric_col2:
+                st.metric("Confidence Level", f"{prediction['confidence']:.2%}")
+            with metric_col3:
+                st.metric("Priority Level", emergency_label)
+            with metric_col4:
+                if prediction["requires_human_review"]:
+                    st.metric("Human Review", "⚠️ Required", delta_color="inverse")
+                else:
+                    st.metric("Human Review", "✅ Not Required")
 
-                st.markdown(f"""
-                <div class='prediction-display animate-in' style='border: 3px solid {emergency_color};'>
-                    <h3>Classification Result</h3>
-                    <h1>{emoji} {prediction['predicted_intent'].replace('_', ' ').upper()}</h1>
+            st.markdown("---")
 
-                """, unsafe_allow_html=True)
+            st.markdown("<h2>Top 3 Candidate Intents</h2>", unsafe_allow_html=True)
+            for rank, item in enumerate(prediction['top_3_intents'], 1):
+                with st.container():
+                    col_rank, col_info, col_score = st.columns([0.8, 2.2, 1])
+                    with col_rank:
+                        medal = "🥇" if rank == 1 else "🥈" if rank == 2 else "🥉"
+                        st.markdown(f"<p style='font-size: 2.9rem; margin: 0; animation: bounce 0.6s ease-out {0.1 * rank}s both;'>{medal}</p>", unsafe_allow_html=True)
+                    with col_info:
+                        st.markdown(f"**{item['intent'].replace('_', ' ').title()}**")
+                        st.caption(item['description'])
+                    with col_score:
+                        st.markdown(f"<p style='font-weight: 700; font-size: 1.9rem;'>{item['confidence']:.2%}</p>", unsafe_allow_html=True)
+                    st.progress(item['confidence'])
 
-                 # ── DETAILED METRICS   ─────────────────────────────
-                st.markdown("<h2> Classification Details </h2>", unsafe_allow_html=True)
-                metric_col1, metric_col2, metric_col3 = st.columns(3)
-                with metric_col1:
-                    st.metric("Primary Classification", prediction["predicted_intent"].replace("_", " ").title())
-
-                with metric_col2:
-                    st.metric("Confidence Level", f"{prediction['confidence']:.2%}" )
-
-                with metric_col3:
-                    st.metric( "Priority Level", emergency_label)
-                st.markdown("---")
-
-                # ── TOP PREDICTIONS WITH ANIMATION ─────────────────────────────
-                st.markdown("<h2>Top 3 Candidate Intents</h2>", unsafe_allow_html=True)
-                for rank, item in enumerate(prediction['top_3_intents'], 1):
-                    with st.container():
-                        col_rank, col_info, col_score = st.columns([0.8, 2.2, 1])
-
-                        with col_rank:
-                            medal = "🥇" if rank == 1 else "🥈" if rank == 2 else "🥉"
-                            st.markdown(f"<p style='font-size: 2.9rem; margin: 0; animation: bounce 0.6s ease-out {0.1 * rank}s both;'>{medal}</p>", unsafe_allow_html=True)
-
-                        with col_info:
-                            st.markdown(f"**{item['intent'].replace('_', ' ').title()}**")
-                            st.caption(item['description'])
-
-                        with col_score:
-                            st.markdown(f"<p style='font-weight: 700; font-size: 1.9rem;'>{item['confidence']:.2%}</p>", unsafe_allow_html=True)
-                        st.progress(item['confidence'])
-
-                st.markdown("---")
-
-                # Success Animation
-                st.balloons()
+            st.markdown("---")
+            st.balloons()
 
     except Exception as e:
-                st.error(f"An error occurred: {str(e)}")
+        st.error(f"An error occurred: {str(e)}")
 
 if clear_btn:
     st.rerun()
@@ -836,8 +714,7 @@ if clear_btn:
 # ========================================
 st.markdown(f"""
 <style>
-    /* Fixed Footer Styling */
-    .fixed-footer {{
+   .fixed-footer {{
         position: fixed;
         bottom: 0;
         left: 0;
@@ -851,8 +728,7 @@ st.markdown(f"""
         z-index: 100;
         box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
     }}
-
-    .stApp {{padding-bottom: 30px;}}
+   .stApp {{padding-bottom: 30px;}}
 </style>
 <div class='fixed-footer'>
     <p style='margin: 0; opacity: 0.7;'>© 2026 | Power by Fahiam Team </p>
