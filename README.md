@@ -111,10 +111,10 @@ An interactive web application built with Streamlit that allows users to classif
 
 ## 🚀 Running the Streamlit Application
 
-### 1. Install Dependencies
-Dependencies:
-streamlit (>=1.28.0)
-pip install -r requirements.txt
+### 1. Install Dependencies:
+```bash
+pip install "streamlit>=1.28.0"
+```
 
 ### 2. Launch the Application
 ```bash
