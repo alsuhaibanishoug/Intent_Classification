@@ -155,14 +155,6 @@ Click **Clear** to reset the form and classify another message.
 
 ---
 
-## 📸 Streamlit Interface
-
-Add screenshots of:
-- Home page
-- Validation panel
-- Prediction results
-- Analytics dashboard
-
 ## 📝 License
 Created by **Fahim Team** © 2026
 
