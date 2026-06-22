@@ -3,17 +3,17 @@
 
 A high-performance, low-latency, and cost-efficient intent classification system built on top of **DistilBERT** (`distilbert-base-uncased`). This engine dynamically maps user storefront queries into 9 distinct business intent classes. 
 
-Our core architecture is optimized for lightweight CPU deployment on local machines, achieving sub-6 millisecond inference speeds with 92% test classification accuracy.
+Our core architecture is optimized for lightweight CPU deployment on local machines, achieving sub-5 millisecond inference speeds with 94% test classification accuracy.
 
 ---
 
 ## 📈 System Metrics Summary
 
-*   **Average Latency:** `4.74 ms` on standard MacBook CPU
-*   **P95 Operational Latency:** `5.88 ms` (95% of customer queries process under 6ms)
-*   **Throughput Capability:** ~210 requests per second per core
-*   **Final Test Accuracy:** `0.9213` across all 9 target intents
-*   **ROC-AUC:** `0.9901` across all 9 target intents
+*   **Average Latency:** `4.12 ms` on standard MacBook CPU
+*   **P95 Operational Latency:** `5.17 ms` (95% of customer queries process under 6ms)
+*   **Throughput Capability:** ~243 requests per second per core
+*   **Final Test Accuracy:** `0.9492` across all 9 target intents
+*   **ROC-AUC:** `0.9883` across all 9 target intents
 
 ---
 
