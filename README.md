@@ -78,6 +78,58 @@ python evaluate_model.py
 
 ---
 
+
+
+
+# 🚀 Streamlit : Web interface to classify customer support messages in real time.
+---
+## ✨ Features
+- 🎨 **Beautiful UI**: Modern animated interface with gradient backgrounds and smooth transitions
+- 📊 **Advanced Analytics**: Real-time confidence scores, top 3 predictions, and intent distribution charts
+- ✅ **Input Validation**: Live validation with helpful error messages
+- 🎯 **Priority Levels**: Classifies messages by emergency/priority levels
+- 🎭 **Responsive Design**: Works seamlessly on desktop and mobile devices
+
+---
+
+## 📋 Requirements
+- **Dependencies**:
+  - `streamlit` (>=1.28.0)
+---
+
+## 🚀 Running the Application
+### Step-by-Step:
+1. **Launch the App**:
+   ```bash
+   streamlit run ui_app.py
+   ```
+   The app will open in your default browser at `http://localhost:8501`
+
+2. **Enter Your Message**:
+   - Type or paste a customer service message in the text area
+   - The app validates input in real-time
+
+3. **Click "Classify"**:
+   - The model processes your input
+   - Displays the primary classification result with emoji
+   - Shows confidence percentage
+
+4. **Review Results**:
+   - **Classification Details**: Primary intent, confidence level, priority level
+   - **Top 3 Candidates**: Ranked predictions with descriptions and confidence scores
+   - **Metrics**: Inference time and timestamp
+
+5. **Clear & Retry**:
+   - Click "Clear" to reset the input
+   - Try new messages
+
+---
+## 📝 License
+Created by **Fahim Team** © 2026
+---
+
+**Happy Classifying! 🚀**
+
 ## 📖 Deep-Dive Project Wiki Pages
 
 For a thorough breakdown of our entire engineering workflow, datasets, and regularization strategies, review our dedicated project wiki entries:
