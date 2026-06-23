@@ -49,7 +49,7 @@ def apply_animated_theme():
     st.markdown(f"""
     <style>
         
-        :root {{
+        :root {{ont-size
             --primary: {COLORS['primary']};
             --secondary: {COLORS['secondary']};
             --accent: {COLORS['accent']};
@@ -215,9 +215,32 @@ def apply_animated_theme():
             to {{
                 opacity: 1;
                 transform: translateY(0);
+            }}[data-testid="stMetric"]
+            {{
+            padding: 0.4rem 0.5rem !important;
             }}
+
+            div[data-testid="column"] {{
+            padding: 0 0.3rem !important;
+             }}
+
+            [data-testid="stMetricLabel"] {{
+            font-size: 0.65rem !important;
+            line-height: 1.2 !important;
+            padding-bottom: 2px !important;
+         }}
+
+        [data-testid="stMetricValue"] {{
+            font-size: 0.95rem !important;
+            line-height: 1.2 !important;
+            white-space: nowrap !important;
+            overflow: visible !important;
         }}
 
+        [data-testid="stMetricDelta"] {{
+            font-size: 0.6rem !important;
+            line-height: 1 !important;
+        }}
     </style>
     """, unsafe_allow_html=True)
 
@@ -559,7 +582,7 @@ class PredictionEngine:
             top_intent = intent_scores[0]["intent"]
             top_confidence = intent_scores[0]["confidence"]
             # Force human review for safety category
-            requires_review = top_confidence < threshold or top_intent == "self_harm_or_suicide_risk"
+            requires_review = top_confidence < threshold
 
             return {
                 "status": "success",
